@@ -1,0 +1,41 @@
+﻿<div class="side-form" style="margin:0px; padding:0px;" > 
+   <div style="padding:10px;background-color:#34B379" >
+        <a routerLink="/products"  style="text-decoration: none !important;" >
+                <i class="glyphicon glyphicon-menu-left" ></i>
+        </a>
+   </div>
+   <div   class="row" *ngIf="product!=undefined" >
+        <div class="col-md-12" >
+                <agm-map [latitude]="product.location.lat" [longitude]="product.location.lng" >
+                    <agm-marker [latitude]="product.location.lat" [longitude]="product.location.lng"></agm-marker>
+                </agm-map>
+        </div>
+   </div>
+   <div *ngIf="product!=undefined"  >
+        <div   class="row"  style="background-color:#34B379;color:#ffffff;padding:12px;" >
+            <div class="col-sm-12" >
+                    <h1>{{product.name}}</h1>
+            </div>
+            <div class="col-sm-12" >
+                    <h4>{{product.name}}</h4>
+            </div>
+        </div>
+        <div   class="row"   >
+            <div class="col-sm-12" >
+                <h2>{{product.location.formattedAddress}}</h2>
+            </div>
+        </div>
+        <div   class="row"   style="margin-top:26px;" >
+            <div class="col-sm-12" >
+                <h2>{{product.contact.formattedPhone}}</h2>
+            </div>
+        </div>
+        <div   class="row"  style="margin-top:26px;"  >
+            <div class="col-sm-12" >
+                <h2>{{product.contact.twitter}}</h2>
+            </div>
+        </div>
+
+   </div>
+
+</div>
